@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    background: #ffeead;
+}
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas:
+    "h h h h h h h h h h h h"
+    "m m c c c c c c c c c c"
+    "f f f f f f f f f f f f";
+}
+.container>div{
+    border: 3px solid steelblue;
+    font-size: 2em;
+    color: #2e2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    grid-area: h;
+}
+.menu{
+    grid-area: m;
+}
+.content{
+    grid-area: c;
+}
+.footer{
+    grid-area: f;
+}

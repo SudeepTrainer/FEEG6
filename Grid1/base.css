@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    border: 2px solid slategray;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    grid-template-rows: repeat(2,60px) ; 
+    grid-auto-rows:60px;
+    /* grid-template: repeat(2,60px)/repeat(3,1fr); */
+    /* column-gap:10px;
+    row-gap: 10px; */
+    gap:10px;
+}
+
+.container div{
+    border:2px solid #2e2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: silver;
+}

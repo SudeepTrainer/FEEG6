@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.menu-link{
+    text-decoration: none;
+    padding: 1rem 1.25rem;
+    margin: 10px;
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blueviolet;
+    transition: all 1s ease-in;
+}
+
+.menu-link:hover{
+    font-size: 1.5rem;
+    color: darkblue;
+}

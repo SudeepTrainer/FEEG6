@@ -1,0 +1,14 @@
+.header{
+    font-size: 1.15rem;
+    color: black;
+    /* transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 100ms; */
+    transition: all 1s ease 100ms;
+}
+
+.header:hover{
+    font-size: 1.5rem;
+    color: blue;
+}
