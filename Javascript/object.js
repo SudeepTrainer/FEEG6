@@ -5,10 +5,10 @@
 
 let elonObject = {
     // property:value
-    fullname:"Elon Musk",
-    age:45,
-    skills:["Enterpreneur","Founder","Developer"],
-    country:"SA"
+    fullname: "Elon Musk",
+    age: 45,
+    skills: ["Enterpreneur", "Founder", "Developer"],
+    country: "SA"
 }
 
 console.log(elonObject.fullname);
@@ -29,29 +29,39 @@ console.log(product);
 // console.log(product.getDetails());
 
 let markPerson = {
-    firstName:"Mark",
-    lastName:"Zuck",
+    firstName: "Mark",
+    lastName: "Zuck",
     // fullname:function fullname(){
     //     console.log(`${this.firstName} ${this.lastName}`);
     // }
     // fullname:function (){
     //     console.log(`${this.firstName} ${this.lastName}`);
     // }
-    fullname(){
+    fullname() {
         console.log(`${this.firstName} ${this.lastName}`);
     },
-    hello(){
+    hello() {
         console.log(`Hi ${this.firstName}`);
     }
 }
 console.log(markPerson.hello());
 
-let person = {
-    name:"Elon Musk",
-    age:23,
-    hello:function hello(){
-        console.log(`Hi ${firstName}`);
+function Person(fname, lname, age) {
+    let person = {};
+    person.firstName = fname;
+    person.lastName = lname;
+    person.age = age;
+    person.greet = function () {
+        console.log(`HI this is ${this.firstName}`);
     }
+    person.getFullName = function () {
+        console.log(`Firstname:${this.firstName} LastName:${this.lastName}`);
+    }
+    return person;
 }
 
-
+let bill = Person("Bill", "Gates", 32);
+console.log(bill);
+console.log(bill.greet());
+let elon = Person("Elon", "Musk", 25)
+console.log(elon);
