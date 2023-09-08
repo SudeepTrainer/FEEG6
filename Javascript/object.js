@@ -28,40 +28,110 @@ console.log(product);
 
 // console.log(product.getDetails());
 
-let markPerson = {
-    firstName: "Mark",
-    lastName: "Zuck",
-    // fullname:function fullname(){
-    //     console.log(`${this.firstName} ${this.lastName}`);
-    // }
-    // fullname:function (){
-    //     console.log(`${this.firstName} ${this.lastName}`);
-    // }
-    fullname() {
-        console.log(`${this.firstName} ${this.lastName}`);
+let person = {}
+person.firstName = "Elon";
+person.lastName = "Musk";
+person.age = 23;
+person.greet = function () {
+    console.log(`HI this is ${this.firstName}`);
+}
+person.getFullName = function () {
+    console.log(`First Name: ${this.firstName} Last Name: ${this.lastName}`);
+}
+
+person.getFullName()
+person.greet()
+
+// // function instantiation
+// function Person(fname, lname, age) {
+//     let person = {};
+//     person.firstName = fname;
+//     person.lastName = lname;
+//     person.age = age;
+//     person.greet = function () {
+//         console.log(`HI this is ${this.firstName}`);
+//     }
+//     person.getFullName = function () {
+//         console.log(`First Name: ${this.firstName} Last Name: ${this.lastName}`);
+//     }
+//     return person;
+// }
+// let elonPerson = Person("Elon", "Musk", 23);
+// elonPerson.getFullName();
+// let billPerson = Person("Bill", "Gates", 24);
+// billPerson.greet();
+
+let personMethods = {
+    greet: function () {
+        console.log(`HI this is ${this.firstName}`);
     },
-    hello() {
-        console.log(`Hi ${this.firstName}`);
+    getFullName: function () {
+        console.log(`First Name: ${this.firstName} Last Name: ${this.lastName}`);
     }
 }
-console.log(markPerson.hello());
-
+// function instantiation
 function Person(fname, lname, age) {
-    let person = {};
-    person.firstName = fname;
-    person.lastName = lname;
-    person.age = age;
-    person.greet = function () {
+    // let person = {};
+    // let person = Object.create(Person.prototype);
+    this.firstName = fname;
+    this.lastName = lname;
+    this.age = age;
+    // return person;
+}
+
+Person.prototype.greet = function () {
+    console.log(`HI this is ${this.firstName}`);
+}
+Person.prototype.getFullName = function () {
+    console.log(`First Name: ${this.firstName} Last Name: ${this.lastName}`);
+}
+
+let elonPerson = new Person("Elon", "Musk", 23);
+elonPerson.getFullName();
+let billPerson = new Person("Bill", "Gates", 24);
+billPerson.greet();
+
+let parent = {
+    firstname: "Mark",
+    lastName: "Zuck",
+    country: "USA"
+}
+
+let child = Object.create(parent);
+child.age = 12;
+
+console.log(child.country);
+
+//Object.create
+let animalPrototype = {
+    makeNoise() {
+        console.log(`${this.name} making noise`);
+    }
+}
+
+let animal = Object.create(animalPrototype);
+animal.name = "Simba";
+animal.makeNoise();
+
+console.log(Array.prototype);
+console.log(String.prototype);
+console.log("mark".toUpperCase());
+// let aStr = new String("Mark");
+// let aStr1 = "Mark";
+let anArray = [];
+// let anArray1 = new Array();
+anArray.push(3); // Array.prototype.push()
+
+class Person1 {
+    constructor(fname, lname, age) {
+        this.firstName = fname;
+        this.lastName = lname;
+        this.age = age;
+    }
+    greet() {
         console.log(`HI this is ${this.firstName}`);
     }
-    person.getFullName = function () {
-        console.log(`Firstname:${this.firstName} LastName:${this.lastName}`);
+    getFullName() {
+        console.log(`First Name: ${this.firstName} Last Name: ${this.lastName}`);
     }
-    return person;
 }
-
-let bill = Person("Bill", "Gates", 32);
-console.log(bill);
-console.log(bill.greet());
-let elon = Person("Elon", "Musk", 25)
-console.log(elon);
