@@ -1,0 +1,11 @@
+body {
+    background: palegoldenrod;
+    font-size: 2rem;
+}
+
+button {
+    background: cornsilk;
+    color: black;
+    font-size: 1.5rem;
+    padding: 1.5em 3em;
+}
