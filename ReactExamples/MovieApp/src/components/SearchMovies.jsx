@@ -27,7 +27,13 @@ export default function SearchMovies(){
                 <button className="button" type="submit">Search</button>
             </form>
             <div>
-                
+                {movies.filter(movie=>movie.poster_path !=null).map(movie =>
+                    <div>
+                     <h3>{movie.title}</h3>
+                     <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}/>
+                    </div>     
+                     )
+                }
             </div>
         </div>
     )
