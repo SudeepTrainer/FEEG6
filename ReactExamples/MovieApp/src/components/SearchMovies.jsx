@@ -1,5 +1,7 @@
 import { useState } from "react";
 import MovieCard from "./MovieCard";
+import ActionAreaCard from "./MaterialCard";
+import { Grid } from "@mui/material";
 
 export default function SearchMovies(){
 
@@ -27,12 +29,12 @@ export default function SearchMovies(){
                     placeholder="Enter the movie name"/>
                 <button className="button" type="submit">Search</button>
             </form>
-            <div>
+            <Grid container columnGap={6} rowGap={6}>
                 {movies.filter(movie=>movie.poster_path !=null).map(movie =>
-                   <MovieCard data={movie} key={movie.id}/>
+                   <ActionAreaCard data={movie} key={movie.id}/>
                      )
                 }
-            </div>
+            </Grid>
         </div>
     )
 }
